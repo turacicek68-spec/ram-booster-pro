@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAM Booster Ultra</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="ship">🚀</div>
+
+<div class="hud">
+👥 Ziyaretçi: <span id="counter">0</span>
+</div>
+
+<div class="container">
+
+<h1>🚀 RAM BOOSTER ULTRA</h1>
+<p>Galaktik RAM Yükseltme Sistemi</p>
+
+<div class="cards">
+<div class="card" onclick="selectRam(this)">8 GB</div>
+<div class="card" onclick="selectRam(this)">16 GB</div>
+<div class="card" onclick="selectRam(this)">32 GB</div>
+<div class="card" onclick="selectRam(this)">64 GB</div>
+</div>
+
+<button onclick="upgrade()">RAM YÜKSELT</button>
+
+<div class="progressBox" id="progressBox">
+<div class="bar" id="bar"></div>
+<div id="percent">%0</div>
+</div>
+
+</div>
+
+<div class="popup" id="popup1">
+<div class="popup-box">
+<h2>RAM YÜKSELTİLDİ ✅</h2>
+<button onclick="showJoke()">Tamam</button>
+</div>
+</div>
+
+<div class="popup" id="popup2">
+<div class="popup-box">
+<h2>😂 ŞAKA</h2>
+<p>RAM internetten yükselmez.</p>
+<button onclick="location.reload()">Tekrar</button>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
