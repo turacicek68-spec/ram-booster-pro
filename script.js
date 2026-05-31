@@ -1,21 +1,24 @@
 let selected=false;
 
-function selectRam(el){
-document.querySelectorAll(".card").forEach(c=>c.style.background="transparent");
-el.style.background="#00e5ff";
+/* kart seçme */
+document.querySelectorAll(".card").forEach(c=>{
+c.onclick=()=>{
+document.querySelectorAll(".card").forEach(x=>x.style.background="transparent");
+c.style.background="cyan";
 selected=true;
 }
+});
 
-function upgrade(){
+/* RAM yükselt */
+function start(){
 if(!selected){
 alert("RAM seç!");
 return;
 }
 
+let p=0;
 let bar=document.getElementById("bar");
 let percent=document.getElementById("percent");
-
-let p=0;
 
 let i=setInterval(()=>{
 p++;
@@ -24,19 +27,20 @@ percent.innerText="%"+p;
 
 if(p>=100){
 clearInterval(i);
-document.getElementById("popup1").style.display="flex";
+document.getElementById("p1").style.display="flex";
 }
 },30);
 }
 
-function showJoke(){
-document.getElementById("popup1").style.display="none";
-document.getElementById("popup2").style.display="flex";
+/* şaka */
+function joke(){
+document.getElementById("p1").style.display="none";
+document.getElementById("p2").style.display="flex";
 }
 
-/* Ziyaretçi sayacı (sahte basit demo) */
-let c=0;
-setInterval(()=>{
-c++;
-document.getElementById("counter").innerText=c;
-},2000);
+/* 🔥 GERÇEK ZİYARETÇİ SAYACI */
+fetch("https://api.countapi.xyz/hit/rambooster-ultra/site")
+.then(r=>r.json())
+.then(data=>{
+document.getElementById("visits").innerText=data.value;
+});
